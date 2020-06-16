@@ -17,7 +17,7 @@ guard let emojiEmbedding = try? NLEmbedding(contentsOf: compiledEmbeddingUrl) el
 guard let osEmbedding = NLEmbedding.wordEmbedding(for: .english) else { fatalError("OS Embedding not found") }
 
 // Step 4: Get the nearest neighbors for the word in emoji-space
-if let dogVector = osEmbedding.vector(for: "rice") {
+if let dogVector = osEmbedding.vector(for: "dog") {
     let neighbors = emojiEmbedding.neighbors(for: dogVector, maximumCount: 5)
     
     print(neighbors)
